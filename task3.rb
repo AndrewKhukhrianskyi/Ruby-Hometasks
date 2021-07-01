@@ -21,4 +21,4 @@ def last_values(mass)
   
   return last_save.sort
 end
-puts('Два старших значения: ' + last_values([4,10,12,2]).to_s)
+puts('Два старших значения: ' + last_values([4,10,12,2,30,25,46,10]).to_s)
