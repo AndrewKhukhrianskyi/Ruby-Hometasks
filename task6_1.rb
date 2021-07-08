@@ -587,25 +587,9 @@ def lowest_lon arr
    return longs.sort![0]
 end
 # 5
-def lowest_lon_lats arr # Спасите :с  
-   lon_lats = []
-   minimal = []
-   arr.each do |l| # Получили двумерки со значениями
-       lon_lats.push([l['loc_lat'].to_f, l['loc_lon'].to_f]) if l['loc_lat'].to_f < 0 and l['loc_lon'].to_f < 0   
-   end
-	
-	"""
-   for i in 0..lon_lats.length - 1
-     for j in 0..lon_lats.length - 2
-	    
-	    minimal = lon_lats[i] if lon_lats[i][0] < lon_lats[j+1][0] and lon_lats[i][1] < lon_lats[j+1][1]
-	 end
-   end
-   Идея заключалась в том, чтобы проходиться по двумеркам и искать значения и сравнивать их, что бы те были минимальными
-   min не канает для двумерок. Выводит минимальное значение по индексу подмассива
-   Можно как-то попробовать через sort_by и задать условие, но я без понятия как
-   """
-  return Hash['min_lat', minimal[0], 'min_lon', minimal[1]]
+def lowest_lon_lats arr 
+   
+  return Hash['min_lat', lowest_lat(arr), 'min_lon',lowest_lon(arr)]
  
 end
 
@@ -627,7 +611,7 @@ def highest_lon arr
 end
 # 8
 def highest_lon_lat arr # Тоже самое :с 
-	""" Алгоритм будет примерно схожий как и с задачей №5 """
+	return Hash['max_lat', highest_lat(arr), 'max_lon', highest_lon(arr)]
 end
 
 # 9 
