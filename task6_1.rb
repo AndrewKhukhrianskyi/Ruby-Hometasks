@@ -617,11 +617,13 @@ end
 # 9 
 
 def events_per_year arr
-	year_hash = {2021 => 0}
+	year_hash = {2021 => 0, 2022 => 0}
 	
 	arr.each do |event|
-		if event['date'].include?('2021') and event['createdAt'].include?('2020')
-			year_hash[2021] += 1
+		if event['date'].include?('2021')
+			year_hash[2021] += 1	
+		elif event['date'].include?('2022')
+			year_hash[2022] += 1
 		end
 	end
 	
