@@ -20,8 +20,8 @@ p login
 
 # Задача 2 - Метод shuffle
 
-arr =[1,2,3,4,5]
 def to_shuffle(arr)
 	return arr.dup.sort_by { rand }
 end
 
+p to_shuffle([1,2,3,4,5])
