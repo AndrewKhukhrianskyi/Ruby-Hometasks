@@ -28,15 +28,15 @@ def lucky_tickets(tickets)
 		minimum += 1		
 	end
 	
-	
+	minimum = tickets['min']
 	# Сложный способ - сумма четных чисел билета равна сумме нечетных
 	for j in minimum..maximum
 		digit = minimum.digits.concat([0,0,0,0,0,0]).slice(0..6)
 		
 		sum_odd, sum_even = 0, 0
 		
-		for num in 0..digit.length - 2
-			digit[num].remainder(2) == 0 ? sum_odd += digit[num] : sum_even += digit[num]	
+		for num in 0...digit.length
+			digit[num].remainder(2) == 0 ? sum_even += digit[num] : sum_odd += digit[num]	
 		end
 		
 		result_hard.push(minimum) if sum_odd == sum_even	
@@ -47,3 +47,4 @@ def lucky_tickets(tickets)
 	
 end
 
+p lucky_tickets({'min' => 100, 'max' => 123})

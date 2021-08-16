@@ -72,8 +72,10 @@ p min_quad(-2, 40)
 
 # +
 p fibs({'length' => 7})
+p fibs({'min' => 1, 'max' => 7})
 
 # -
 p fibs({'length' => 'abc'})
+p fibs({'min' => 'abc', 'max' => 7})
 
 

@@ -7,7 +7,7 @@ def min_quad(len, min_square)
 	numbers = ''
 	
 	
-	for el in 0..len - 1
+	for el in 0...len
 		numbers += (number + el).to_s + ' '
 	end
 	
