@@ -2,6 +2,7 @@
 require 'rspec'
 require 'pry'
 require 'selenium-webdriver'
+require 'capybara'
 
 require_relative '../env/common_variables'
 require_relative '../pages/main_page'
