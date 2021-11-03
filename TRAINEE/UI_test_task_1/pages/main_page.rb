@@ -1,4 +1,8 @@
 class MainPage
+  def url_include?(browser, data)
+    browser.current_url.include?(data)
+  end
+
   def banner(browser)
     browser.find_element(class: 'site-header')
   end
@@ -15,11 +19,19 @@ class MainPage
     browser.find_element(class: 'search-field')
   end
 
+  def scroll_down(browser)
+    browser.find_element(class: 'menu-scroll-down')
+  end
+
+  def enter_data(browser, data)
+    search_field(browser).send_keys(data)
+  end
+
   def submit_search(browser)
     browser.find_element(class: 'search-submit')
   end
 
-  def posts(browser)
+  def posts_recent(browser)
     browser.find_element(id: 'recent-posts-2')
   end
 
@@ -49,6 +61,14 @@ class MainPage
 
   def entry_title(browser)
     browser.find_element(class: 'entry-title')
+  end
+
+  def title_by_name(browser, data)
+    browser.find_element(name: data)
+  end
+
+  def posts_button(browser)
+    browser.find_element(class: 'more_link')
   end
 
   def entry_data(browser)
